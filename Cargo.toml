@@ -1,0 +1,13 @@
+[package]
+name = "simple_nats_client"
+version = "0.1.0"
+authors = ["itn3000 <itn3000@gmail.com>"]
+
+[dependencies]
+serde_json="1.0"
+serde_derive="1.0"
+serde="1.0"
+log="0.3"
+
+[dev-dependencies]
+env_logger="0.3"

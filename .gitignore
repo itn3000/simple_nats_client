@@ -1,0 +1,6 @@
+target/
+Cargo.lock
+output.txt
+test.txt
+.vscode/
+rls.toml
