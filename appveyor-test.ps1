@@ -1,5 +1,5 @@
 $natsexe = Resolve-Path -Path $env:NATS_EXECUTABLE
-Get-ChildItem -Path $(Join-Path $(Get-Location) "gnatsd-v0.9.6-windows-386")
+Get-ChildItem -Recurse
 $args = @("-a","127.0.0.1","-p","4222")
 
 $ErrorActionPreference = "Stop"
