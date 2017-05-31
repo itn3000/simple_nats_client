@@ -1,5 +1,4 @@
-$natsexe = $env:NATS_EXECUTABLE
-Out-Host $natsexe
+$natsexe = Resolve-Path -Path $env:NATS_EXECUTABLE
 Get-ChildItem
 $args = @("-a","127.0.0.1","-p","4222")
 
