@@ -361,7 +361,9 @@ impl NatsClient {
         let mut data: Vec<u8> = vec![0u8;(msgsize + 2) as usize];
         data[0..copylen].copy_from_slice(&self.receive_buffer[0..copylen]);
         let remaining_length = self.receive_buffer.len() - copylen;
-        self.receive_buffer[0..remaining_length].copy_from_slice(&mut self.receive_buffer[copylen..]);
+        // in-place copy supported from nightly?
+        let src_slice: Vec<u8> = self.receive_buffer[copylen..].iter().cloned().collect();
+        self.receive_buffer[0..remaining_length].copy_from_slice(&src_slice[..]);
         self.receive_buffer.truncate(remaining_length);
         let mut total_bytes_read: usize = copylen;
         for i in 0..(msgsize + 1) * 100 {
