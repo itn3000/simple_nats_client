@@ -6,7 +6,10 @@ $ErrorActionPreference = "Stop"
 
 $natstask = Start-Process -FilePath $natsexe -ArgumentList $args -NoNewWindow -PassThru
 
+
 cargo test --verbose
+$er = $LASTEXITCODE
 
 $natstask.Kill()
 
+exit $er
