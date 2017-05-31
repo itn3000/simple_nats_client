@@ -33,7 +33,7 @@ os: Visual Studio 2015
 # channels to enable unstable features when building for nightly. Or you could add additional
 # matrix entries to test different combinations of features.
 environment:
-  NATS_EXECUTABLE: "%CD%/gnatsd-v0.9.6-windows-386/gnatsd.exe"
+  NATS_EXECUTABLE: .\gnatsd-v0.9.6-windows-386\gnatsd.exe
   matrix:
 
 ### MSVC Toolchains ###
