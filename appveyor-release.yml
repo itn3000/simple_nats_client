@@ -34,6 +34,8 @@ os: Visual Studio 2015
 # matrix entries to test different combinations of features.
 environment:
   NATS_EXECUTABLE: .\gnatsd-v0.9.6-windows-386\gnatsd.exe
+  CARGO_TOKEN:
+    secure: MbvTSazI1CjSITGPcJeS4VqtxctxMsqi5uYxPMA+oPKYnJlmeXd5oVg5uGefPtaI
   matrix:
 
 ### MSVC Toolchains ###
@@ -122,3 +124,6 @@ build: false
 # environment variable.
 test_script:
   - powershell .\appveyor-test.ps1
+
+deploy_script:
+  - powershell .\appveyor-release.ps1
